@@ -1,4 +1,5 @@
 addSbtCoursier
+addSbtPlugin("ch.epfl.lamp" % "sbt-dotty" % "0.3.1")
 addSbtPlugin("com.eed3si9n" % "sbt-unidoc" % "0.4.2")
 addSbtPlugin("com.github.gseitz" %% "sbt-release" % "1.0.11")
 addSbtPlugin("com.jsuereth" % "sbt-pgp" % "2.0.0-M2")

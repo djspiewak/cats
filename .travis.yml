@@ -15,12 +15,13 @@ jdk:
 scala_version_211: &scala_version_211 2.11.12
 scala_version_212: &scala_version_212 2.12.7
 scala_version_213: &scala_version_213 2.13.0-RC2
+scala_version_3: &scala_version_3 0.15.0-RC1
 
 before_install:
  - export PATH=${PATH}:./vendor/bundle
  - if [[ ! -z "$HydraLicense" ]]; then
      mkdir -p  /home/travis/.triplequote/metrics/config && echo "$HydraLicense" > "/home/travis/.triplequote/hydra.license" && cp hydra-metrics-service.conf /home/travis/.triplequote/metrics/config/metrics-service.conf;
-   fi  
+   fi
 
 stages:
   - name: styling
@@ -54,6 +55,8 @@ jobs:
       scala: *scala_version_213
       # the bench module has dependencies not available in Scala 2.13, so don't test it
       script: sbt ++$TRAVIS_SCALA_VERSION! buildJVM
+    - <<: *jvm_tests
+      scala: *scala_version_3
 
     - env: TEST="docs"
       install: gem install jekyll -v 2.5

@@ -169,6 +169,8 @@ lazy val testingDependencies = Seq(
   )
 )
 
+val dottySettings = libraryDependencies := libraryDependencies.value.map(_.withDottyCompat(scalaVersion.value))
+
 lazy val docsMappingsAPIDir = settingKey[String]("Name of subdirectory in site target directory for api docs")
 
 lazy val docSettings = Seq(
@@ -499,6 +501,7 @@ lazy val kernel = crossProject(JSPlatform, JVMPlatform)
   .jsSettings(commonJsSettings)
   .jvmSettings(commonJvmSettings ++ mimaSettings("cats-kernel"))
   .settings(libraryDependencies += "org.scalacheck" %%% "scalacheck" % scalaCheckVersion % "test")
+  .settings(dottySettings)
 
 lazy val kernelLaws = crossProject(JSPlatform, JVMPlatform)
   .in(file("kernel-laws"))
@@ -523,6 +526,7 @@ lazy val core = crossProject(JSPlatform, JVMPlatform)
   .settings(libraryDependencies += "org.scalacheck" %%% "scalacheck" % scalaCheckVersion % "test")
   .jsSettings(commonJsSettings)
   .jvmSettings(commonJvmSettings ++ mimaSettings("cats-core"))
+  .settings(dottySettings)
 
 lazy val laws = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
@@ -859,7 +863,8 @@ lazy val warnUnusedImport = Seq(
         Seq("-Ywarn-unused-import")
       case Some((2, n)) if n >= 12 =>
         Seq("-Ywarn-unused:imports")
-
+      case Some((0, _)) =>
+        Seq.empty
     }
   },
   scalacOptions in (Compile, console) ~= { _.filterNot(Set("-Ywarn-unused-import", "-Ywarn-unused:imports")) },
