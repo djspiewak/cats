@@ -2,7 +2,7 @@ package cats.kernel
 package instances
 
 trait CharInstances {
-  implicit val catsKernelStdOrderForChar = new CharOrder
+  implicit val catsKernelStdOrderForChar: Order[Char] = new CharOrder
 }
 
 class CharOrder extends Order[Char] with Hash[Char] {

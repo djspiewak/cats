@@ -14,6 +14,7 @@ object StaticMethods extends cats.kernel.compat.HashCompat {
     override def size: Int = m.size
     def get(k: K): Option[V] = m.get(k)
     def iterator: Iterator[(K, V)] = m.iterator
+    override def updated[V1 >: V](key: K, value: V1): Map[K, V1] = this + (key -> value)
   }
 
   // scalastyle:off return
