@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Laika 0.18.1 + Helium Theme" />
-    <title>Data Types</title>
+    <title>Resources for Learners</title>
     
       <meta name="author" content="Cody Allen"/>
     
@@ -106,11 +106,11 @@
       <ul class="nav-list">
         <li class="level1"><a href="index.html">Cats</a></li>
         <li class="level1"><a href="typeclasses.html">Type Classes</a></li>
-        <li class="level1 active"><a href="#">Data Types</a></li>
+        <li class="level1"><a href="datatypes.html">Data Types</a></li>
         <li class="level1"><a href="algebra.html">Algebra</a></li>
         <li class="level1"><a href="alleycats.html">Alleycats</a></li>
         <li class="level1"><a href="motivations.html">Motivations</a></li>
-        <li class="level1"><a href="resources_for_learners.html">Resources for Learners</a></li>
+        <li class="level1 active"><a href="#">Resources for Learners</a></li>
         <li class="level1"><a href="jump_start_guide.html">Jump Start Guide</a></li>
         <li class="level1"><a href="imports.html">Imports</a></li>
         <li class="level1"><a href="faq.html">FAQ</a></li>
@@ -190,9 +190,13 @@
     <div id="container">
 
       <nav id="page-nav">
-        <p class="header"><a href="#">Data Types</a></p>
+        <p class="header"><a href="#">Resources for Learners</a></p>
 
         <ul class="nav-list">
+          <li class="level1"><a href="#tutorials">Tutorials</a></li>
+          <li class="level1"><a href="#example-projects">Example Projects</a></li>
+          <li class="level1"><a href="#videos">Videos</a></li>
+          <li class="level1"><a href="#social-network">Social network</a></li>
         </ul>
 
         <p class="footer"></p>
@@ -200,30 +204,65 @@
 
       <main class="content">
 
-        <ul class="nav-list">
-          <li class="level1 nav-header">Data Types</li>
-          <li class="level2"><a href="datatypes/chain.html">Chain</a></li>
-          <li class="level2"><a href="datatypes/const.html">Const</a></li>
-          <li class="level2"><a href="datatypes/contt.html">ContT</a></li>
-          <li class="level2"><a href="datatypes/either.html">Either</a></li>
-          <li class="level2"><a href="datatypes/eithert.html">EitherT</a></li>
-          <li class="level2"><a href="datatypes/eval.html">Eval</a></li>
-          <li class="level2"><a href="datatypes/freeapplicative.html">Free Applicative</a></li>
-          <li class="level2"><a href="datatypes/freemonad.html">Free Monad</a></li>
-          <li class="level2"><a href="datatypes/functionk.html">FunctionK</a></li>
-          <li class="level2"><a href="datatypes/id.html">Id</a></li>
-          <li class="level2"><a href="datatypes/ior.html">Ior</a></li>
-          <li class="level2"><a href="datatypes/iort.html">IorT</a></li>
-          <li class="level2"><a href="datatypes/kleisli.html">Kleisli</a></li>
-          <li class="level2"><a href="datatypes/nel.html">NonEmptyList</a></li>
-          <li class="level2"><a href="datatypes/nested.html">Nested</a></li>
-          <li class="level2"><a href="datatypes/oneand.html">OneAnd</a></li>
-          <li class="level2"><a href="datatypes/optiont.html">OptionT</a></li>
-          <li class="level2"><a href="datatypes/state.html">State</a></li>
-          <li class="level2"><a href="datatypes/validated.html">Validated</a></li>
-          <li class="level2"><a href="datatypes/writer.html">Writer</a></li>
-          <li class="level2"><a href="datatypes/writert.html">WriterT</a></li>
-          <li class="level2"><a href="datatypes/statet.html">StateT</a></li>
+        <h1 id="books" class="title">Books</h1>
+        <ul>
+          <li><a href="https://www.manning.com/books/functional-programming-in-scala">Functional Programming in Scala</a>
+          by Paul Chiusano and Rúnar Bjarnason - While this book does not
+          specifically cover Cats, it is a great introduction to functional
+          programming in Scala in general and covers some of the abstractions
+          that can be found in Cats.</li>
+        </ul>
+        <ul>
+          <li><a href="https://underscore.io/books/scala-with-cats/">Scala with Cats</a> 
+          by Noel Welsh and Dave Gurnell - The aims of this book are two-fold: 
+          to introduce monads, functors, and other functional programming patterns
+          as a way to structure program design, and to explain how these 
+          concepts are implemented in Cats.</li>
+        </ul>
+        
+        <h1 id="tutorials" class="section">Tutorials<a class="anchor-link right" href="#tutorials"><i class="icofont-laika">&#xef71;</i></a></h1>
+        <ul>
+          <li><a href="http://eed3si9n.com/herding-cats/">herding cats</a> by Eugene Yokota</li>
+        </ul>
+        <ul>
+          <li><a href="https://www.scala-exercises.org/cats">Scala Exercises</a> by 47 Degrees 
+          offers multiple online exercises to learn about the type classes and 
+          datatypes included in Cats.</li>
+        </ul>
+        
+        <h1 id="example-projects" class="section">Example Projects<a class="anchor-link right" href="#example-projects"><i class="icofont-laika">&#xef71;</i></a></h1>
+        <ul>
+          <li><a href="https://github.com/pauljamescleary/scala-pet-store">Scala Pet Store</a> 
+          Demonstrates FP techniques while maintaining approachability for people with an OO background. Uses tagless final for the core domain, and popular Typelevel libraries including Cats, Http4s, Circe and Doobie.</li>
+        </ul>
+        
+        <h1 id="videos" class="section">Videos<a class="anchor-link right" href="#videos"><i class="icofont-laika">&#xef71;</i></a></h1>
+        <ul>
+          <li><a href="https://www.youtube.com/playlist?list=PLFrwDVdSrYE6dy14XCmUtRAJuhCxuzJp0">Functional Structures in Scala</a> 
+          &nbsp; by <a href="https://github.com/MPilquist">Michael Pilquist</a> offers a series
+          of lectures about basic functional structures. </li>
+        </ul>
+        <ul>
+          <li>
+            <strong>Category Theory for Programmers</strong>
+            by <a href="https://github.com/BartoszMilewski">Bartosz Milewski</a> is a series 
+            of category theory lectures oriented towards programmers. 
+            The code examples are written in Haskell and C++, 
+            but the course is designed for programmers of any background, 
+            even the ones without a strong maths knowledge. 
+            <ul>
+              <li><a href="https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_">part 1</a> </li>
+              <li><a href="https://www.youtube.com/playlist?list=PLbgaMIhjbmElia1eCEZNvsVscFef9m0dm">part 2</a> </li>
+              <li><a href="https://www.youtube.com/playlist?list=PLbgaMIhjbmEn64WVX4B08B4h2rOtueWIL">part 3</a> </li>
+            </ul>
+          </li>
+          <li><a href="https://www.youtube.com/watch?v=P8nGAo3Jp-Q">Easy and efficient data validation with Cats</a> by <a href="https://danielasfregola.com/">Daniela Sfregola</a>  this talk introduces Cats, and some of its most interesting components for data validation. In particular, we’ll discuss some options to achieve efficient and expressive data validation. We will also argue that, compared to other options in the language, Cats is particularly suited for the task thanks to its easy-to-use data types and more approachable syntax.</li>
+          <li><a href="https://www.youtube.com/playlist?list=PLy4hTMY6erDBmvZiEDjtCTP8XCdhaXc2c">Cats by example</a> by <a href="https://twitter.com/TomTriple">Thomas Höfer</a> provides a beginner series on various datatypes from Cats. </li>
+        </ul>
+        
+        <h1 id="social-network" class="section">Social network<a class="anchor-link right" href="#social-network"><i class="icofont-laika">&#xef71;</i></a></h1>
+        <ul>
+          <li><a href="https://twitter.com/impurepics">@impurepics</a> regularly tweet informative and kawaii educational pieces about Cats and FP in Scala.<br></li>
         </ul>
 
         <hr style="margin-top: 30px"/>

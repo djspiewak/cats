@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Laika 0.18.1 + Helium Theme" />
-    <title>Data Types</title>
+    <title>Imports</title>
     
       <meta name="author" content="Cody Allen"/>
     
@@ -106,13 +106,13 @@
       <ul class="nav-list">
         <li class="level1"><a href="index.html">Cats</a></li>
         <li class="level1"><a href="typeclasses.html">Type Classes</a></li>
-        <li class="level1 active"><a href="#">Data Types</a></li>
+        <li class="level1"><a href="datatypes.html">Data Types</a></li>
         <li class="level1"><a href="algebra.html">Algebra</a></li>
         <li class="level1"><a href="alleycats.html">Alleycats</a></li>
         <li class="level1"><a href="motivations.html">Motivations</a></li>
         <li class="level1"><a href="resources_for_learners.html">Resources for Learners</a></li>
         <li class="level1"><a href="jump_start_guide.html">Jump Start Guide</a></li>
-        <li class="level1"><a href="imports.html">Imports</a></li>
+        <li class="level1 active"><a href="#">Imports</a></li>
         <li class="level1"><a href="faq.html">FAQ</a></li>
         <li class="level1"><a href="CONTRIBUTING.html">Contributor guide</a></li>
         <li class="level1"><a href="ADOPTERS.html">Adopters</a></li>
@@ -190,7 +190,7 @@
     <div id="container">
 
       <nav id="page-nav">
-        <p class="header"><a href="#">Data Types</a></p>
+        <p class="header"><a href="#">Imports</a></p>
 
         <ul class="nav-list">
         </ul>
@@ -200,31 +200,50 @@
 
       <main class="content">
 
-        <ul class="nav-list">
-          <li class="level1 nav-header">Data Types</li>
-          <li class="level2"><a href="datatypes/chain.html">Chain</a></li>
-          <li class="level2"><a href="datatypes/const.html">Const</a></li>
-          <li class="level2"><a href="datatypes/contt.html">ContT</a></li>
-          <li class="level2"><a href="datatypes/either.html">Either</a></li>
-          <li class="level2"><a href="datatypes/eithert.html">EitherT</a></li>
-          <li class="level2"><a href="datatypes/eval.html">Eval</a></li>
-          <li class="level2"><a href="datatypes/freeapplicative.html">Free Applicative</a></li>
-          <li class="level2"><a href="datatypes/freemonad.html">Free Monad</a></li>
-          <li class="level2"><a href="datatypes/functionk.html">FunctionK</a></li>
-          <li class="level2"><a href="datatypes/id.html">Id</a></li>
-          <li class="level2"><a href="datatypes/ior.html">Ior</a></li>
-          <li class="level2"><a href="datatypes/iort.html">IorT</a></li>
-          <li class="level2"><a href="datatypes/kleisli.html">Kleisli</a></li>
-          <li class="level2"><a href="datatypes/nel.html">NonEmptyList</a></li>
-          <li class="level2"><a href="datatypes/nested.html">Nested</a></li>
-          <li class="level2"><a href="datatypes/oneand.html">OneAnd</a></li>
-          <li class="level2"><a href="datatypes/optiont.html">OptionT</a></li>
-          <li class="level2"><a href="datatypes/state.html">State</a></li>
-          <li class="level2"><a href="datatypes/validated.html">Validated</a></li>
-          <li class="level2"><a href="datatypes/writer.html">Writer</a></li>
-          <li class="level2"><a href="datatypes/writert.html">WriterT</a></li>
-          <li class="level2"><a href="datatypes/statet.html">StateT</a></li>
-        </ul>
+        <h1 id="imports" class="title">Imports</h1>
+        <p>The easiest approach to Сats imports is to import everything that&#39;s commonly needed:</p>
+        <pre class="keep-together pdf epub"><code class="nohighlight"><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="identifier">_</span><span>
+</span><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="identifier">data</span><span>.</span><span class="identifier">_</span><span>
+</span><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="identifier">syntax</span><span>.</span><span class="identifier">all</span><span>.</span><span class="identifier">_</span></code></pre>
+        <p>The <code>cats._</code> import brings in quite a few <a href="typeclasses.html">type classes</a> (similar to interfaces) such as <a href="typeclasses/monad.html">Monad</a>, <a href="typeclasses/semigroup.html">Semigroup</a>, and <a href="typeclasses/foldable.html">Foldable</a>. Instead of the entire <code>cats</code> package, you can import only the types that you need, for example:</p>
+        <pre class="keep-together pdf epub"><code class="nohighlight"><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="type-name">Monad</span><span>
+</span><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="type-name">Semigroup</span><span>
+</span><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="type-name">Foldable</span></code></pre>
+        <p>The <code>cats.data._</code>, import brings in data structures such as <a href="datatypes/validated.html">Validated</a> and <a href="datatypes/state.html">State</a>. Instead of the entire <code>cats.data</code> package, you can import only the types that you need, for example:</p>
+        <pre class="keep-together pdf epub"><code class="nohighlight"><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="identifier">data</span><span>.</span><span class="type-name">Validated</span><span>
+</span><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="identifier">data</span><span>.</span><span class="type-name">State</span></code></pre>
+        <p>The <code>cats.syntax.all._</code> import adds syntax enrichment onto certain types to provide some handy methods such as right-biased <code>Either</code> combinators:</p>
+        <pre><code class="nohighlight"><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="identifier">syntax</span><span>.</span><span class="identifier">all</span><span>.</span><span class="identifier">_</span><span>
+
+</span><span class="comment">// Сats adds right-biased combinators to the standard library&#39;s Either
+</span><span class="keyword">val</span><span> </span><span class="identifier">e</span><span>: </span><span class="type-name">Either</span><span>[</span><span class="type-name">String</span><span>, </span><span class="type-name">Int</span><span>] = </span><span class="type-name">Right</span><span>(</span><span class="number-literal">3</span><span>)
+</span><span class="comment">// e: Either[String, Int] = Right(value = 3)
+</span><span class="identifier">e</span><span>.</span><span class="identifier">map</span><span>(</span><span class="identifier">_</span><span> + </span><span class="number-literal">1</span><span>)
+</span><span class="comment">// res4: Either[String, Int] = Right(value = 4)
+</span><span>
+</span><span class="comment">// cats adds an orEmpty method to the standard library&#39;s Option
+</span><span class="keyword">val</span><span> </span><span class="identifier">o</span><span>: </span><span class="type-name">Option</span><span>[</span><span class="type-name">String</span><span>] = </span><span class="type-name">None</span><span>
+</span><span class="comment">// o: Option[String] = None
+</span><span class="identifier">o</span><span>.</span><span class="identifier">orEmpty</span><span>
+</span><span class="comment">// res5: String = &quot;&quot;</span></code></pre>
+        <p>If you&#39;d like to import à la carte, you can do so, by importing from <code>cats.syntax</code> for syntax enrichment.
+        For example, if you&#39;d like to import the <code>Semigroup</code> syntax:</p>
+        <pre class="keep-together pdf epub"><code class="nohighlight"><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="identifier">syntax</span><span>.</span><span class="identifier">semigroup</span><span>.</span><span class="identifier">_</span><span>
+
+</span><span class="string-literal">&quot;Hello, &quot;</span><span> |+| </span><span class="string-literal">&quot;World!&quot;</span><span>
+</span><span class="comment">// res7: String = &quot;Hello, World!&quot;</span></code></pre>
+        <p>The import adds the <code>|+|</code> syntax.</p>
+        <p><strong>Note</strong>: Beware that if you import a type class instance or its syntax twice, you will receive conflicting implicits with a less than helpful error message.
+        This usually happens when importing different type classes in the same hierarchy or when importing syntax enrichment for all type classes using <code>cats.syntax.all._</code> or <code>cats.implicits._</code> together with a more specific import like <code>cats.syntax.option._</code> or <code>cats.instances.either._</code>.
+        Below is an example of this phenomenon:</p>
+        <pre class="keep-together pdf epub"><code class="nohighlight"><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="identifier">syntax</span><span>.</span><span class="identifier">all</span><span>.</span><span class="identifier">_</span><span>
+
+</span><span class="number-literal">1</span><span> |+| </span><span class="number-literal">2</span><span>
+
+</span><span class="keyword">import</span><span> </span><span class="identifier">cats</span><span>.</span><span class="identifier">syntax</span><span>.</span><span class="identifier">semigroup</span><span>.</span><span class="identifier">_</span><span>
+
+</span><span class="number-literal">3</span><span> |+| </span><span class="number-literal">5</span><span> </span><span class="comment">// error: value |+| is not a member of Int</span></code></pre>
+        <p>Compilation fails on the second invocation of <code>|+|</code> because we now have conflicting implicits from <code>Semigroup</code>.</p>
 
         <hr style="margin-top: 30px"/>
         <footer style="font-size: 90%; text-align: center">
